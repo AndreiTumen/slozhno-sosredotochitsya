@@ -2,3 +2,19 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+
+:root {
+  --bg-clr: rgba(0, 0, 40, 1);
+  --accent-color: rgba(255, 0, 112, 1); /* тень заголовка header */
+  --title-clr: rgba(0, 0, 40, 1); /* цвет текста заголовков */
+  --title-section-color: rgba(255, 0, 112, 1); /* заголовок секции */
+  --page-bg-img: url(../images/cover-image-dark.png);
+  --headfoot-title-clr: rgba(219, 0, 255, 1); /* цвет текста заголовков header и footer */
+  --header-rec-display: flex;
+  --title-decor: rgba(255, 0, 112, 1); /* цвет фона заголовков */
+  --decor-zone-clr: rgba(255, 0, 112, 1); /* уголки в header и footer */
+  --header-button-clr: rgba(255, 0, 112, 1);
+  --header-button-brd-clr: rgba(255, 0, 112, 0.4);
+  --text-color: rgba(241, 178, 206, 1); /* цвет текста article */
+}

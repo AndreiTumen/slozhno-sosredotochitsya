@@ -1,5 +1,371 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+.page { /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-clr, rgba(0, 0, 40, 1));
+  background-image: var(--page-bg-img, url(../images/cover-image-dark.png));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 0 10px;
+}
+
+.decorated-zone::before { /* уголок верхний */
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--decor-zone-clr, rgba(255, 0, 112, 1));
+  border-right: 1px solid var(--decor-zone-clr, rgba(255, 0, 112, 1));
+}
+
+.decorated-zone::after { /* уголок нижний */
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--decor-zone-clr, rgba(255, 0, 112, 1));
+  border-left: 1px solid var(--decor-zone-clr, rgba(255, 0, 112, 1));
+}
+
+.header__rec {  /* rec */ 
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  display: var(--header-rec-display, flex);
+  color: rgba(255, 0, 112, 1);
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.header__rec::after {  /* лампочка */ 
+  content: "";
+  position: absolute;
+  left: 43px;
+  align-self: center;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+  background-color: rgba(255, 0, 112, 1);
+}
+
+.header__theme-menu-list { /* список выбора тем */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 75px;
+}
+
+.header__theme-menu-button { /* button списка выбора тем */
+  inline-size: 70px;
+  block-size: 26px;
+  border: none;
+  color: var(--header-button-clr, rgba(255, 0, 112, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--header-button-brd-clr, rgba(255, 0, 112, 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid; 
+  outline: none;
+}
+
+.header__theme-menu-button_active { /* активная кнопка */
+  border: 1px solid;
+  pointer-events: none;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  padding: 65px 0 66px;
+}
+
+.header__title {
+  color: var(--headfoot-title-clr, rgba(219, 0, 255, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.7%;
+  text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+.header__title_text {
+  align-self: flex-end;
+  color: var(--title-clr, rgba(0, 0, 40, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+.title-decor { /* фон текста */
+ background-color: var(--title-decor, rgba(255, 0, 112, 1));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  margin: 40px 0;
+  padding: 0 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section_pictures {
+  gap: 10px;
+}
+
+.section__title {
+  color: var(--title-section-color, rgba(255, 0, 112, 1)) ;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.section__img {
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__subtitle { /* подзаголовок третьей секции */
+  color: var(--title-clr, rgba(0, 0, 40, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.section__article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.article__title {
+  color: var(--title-clr, rgba(0, 0, 40, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.article__title_fw_regular {
+  font-weight: 400;
+}
+
+.article__text-link {
+  display: inline-block;
+  border: 1px solid transparent;
+  line-height: 90%;
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+.article__text-link:hover {
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.article__text-link:focus-visible {
+  border: 1px solid; 
+  outline: none;
+}
+
+.article__text {
+  color: var(--text-color, rgba(241, 178, 206, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+  padding: 0 10px;
+}
+
+.footer__title {
+  color: var(--headfoot-title-clr, rgba(219, 0, 255, 1));
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.7%;
+  text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+@media (width >= 768px) { /* для планшета и десктопа */
+
+  .header {
+    min-block-size: 1024px;
+    padding: 0 20px;
+  }
+  
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__rec {
+    top: 20px;
+    right: 48px;
+  }
+
+  .header__title {
+    margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__title_text {
+    inline-size: 50%;
+  }
+
+  .content {
+    row-gap: 80px;
+    padding: 0 20px;
+  }
+
+  .section:nth-of-type(1),
+  .section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: minmax(236px, calc(1 / 3 * (100% - 40px))) auto;
+  }
+
+  .section:nth-of-type(1) .section__container {
+    grid-column: 1 span;
+  }
+
+  .section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+  }
+
+  .section:nth-of-type(2) .section__container {
+    grid-column: span 3;
+  }
+
+  .section_pictures {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-rows: min-content repeat(3, minmax(min-content, max-content));
+    gap: 20px;
+  }
+
+  .section_pictures .article__title {
+    grid-column: span 3;
+  }
+
+  .section__img:nth-of-type(1),
+  .section__img:nth-of-type(5) {
+    grid-column: span 2;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section__img:nth-of-type(2),
+  .section__img:nth-of-type(3) {
+    grid-row: span 2;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+}
+
+@media (width >= 768px) and (width <= 1024px) { /* для планшета */
+
+  .header__theme-menu-list {
+    padding-top: 192px;
+  }
+
+  .header__container {
+    gap: 162px;
+    padding: 173px 0 183px;
+  }
+
+  .content {
+    margin: 60px 0;
+  }
+
+}
+
+@media (width >= 1024px) { /* для десктопа */
+
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__container {
+    gap: 114px;
+    padding: 273px 0 134px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .section:nth-of-type(2) .section__container {
+    flex-direction: row;
+  }
+
+  .section:nth-of-type(2) .section__article {
+    flex-grow: 1;
+    flex-basis: 315px;
+  }
+  
 }
